@@ -6,6 +6,17 @@
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
   }
   .navbar {
     overflow: hidden;
@@ -66,6 +77,7 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  
   .alert {
   padding: 20px;
   background-color: #f44336;
