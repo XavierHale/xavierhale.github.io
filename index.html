@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -5,6 +6,17 @@
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
   }
   .navbar {
     overflow: hidden;
@@ -65,6 +77,7 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  
   .alert {
   padding: 20px;
   background-color: #f44336;
@@ -95,6 +108,57 @@
   </style>
   </head>
   <body>
-    <p>Please follow <a href="https://10.180.234.119:8000">this link</a>.</p>
-  </body>
+  
+    <div class="navbar">
+      <a href="http://10.180.234.119:8000/index.html">Home</a>
+      <a href="" onclick="myFunction()">News</a>
+      <div class="dropdown">
+        <button class="dropbtn">Downloads 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="http://10.180.234.119:8000/dlpage.html">Games</a>
+          <a href="http://10.180.234.119:8000/ems.html">Emulators</a>
+          <a href="" onclick="myFunction()">ROM files (coming soon)</a>
+          <a href="http://10.180.234.119:8000/tools.html">Tools & Trolls</a>
+        </div>
+      </div> 
+      <a href="http://10.180.234.119:8000/contact.html">Contact</a>
+    </div>
+    
+  </div>
+<div style="padding-left:16px">
+  <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
+  <h1>Hello there!</h1>
+  <p>This is UBG 69420, a spin off of UBG 100. This site is in active development, so expect some bugs.</p>
+  <p>If you would like any games featured, contact me using the link above.</p>
+  <p></p>
+  <input type="button" value="click me" onclick="playMusic()" />
+</div>
+<script>
+  function playMusic(){
+  var music = new Audio('damage.mp3');
+  music.play();
+  }
+</script>
+<script>
+  function myFunction() {
+    alert("Oh No! It looks like this isn't implemented");
+  }
+  </script>
+
+<script>
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+      var div = this.parentElement;
+      div.style.opacity = "0";
+      setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+  }
+  </script>
+
+</body>
 </html>
