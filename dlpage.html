@@ -117,9 +117,10 @@
         </div>
         
       </div>
-      <body onload="alert()">
+      <body onload="servealert()" ></body>
   <div style="padding-left:10px">
   <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
+  <body onload="alert()"></body>
   <h2>Game Downloads:</h2>
   <h3></h3>
   <a href="http://10.180.234.119:8000/games/AshesStandalone_V1_00.zip">  Ashes Afterglow</a>
@@ -180,9 +181,17 @@ function test(url) {
   xhttp.open("GET", url, true);
   xhttp.send();
 }
-function alert() {
-  alert("If the links don't work, then the server is down. Just ask me to start it.")
+
+</script>
+<script>
+function alert(message) {
+  alert(message)
 }
+</script>
+<script>
+  function servealert() {
+    alert("The servers may be down, but you can still browse the games. If they are down, just ask me to start them")
+  }
 </script>
 </body>
 </head>
