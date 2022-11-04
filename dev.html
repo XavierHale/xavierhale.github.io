@@ -6,6 +6,17 @@
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    animation: fadeInAnimation ease 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
   }
   .navbar {
     overflow: hidden;
@@ -16,6 +27,14 @@
     float: left;
     font-size: 16px;
     color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .secret a {
+    float: left;
+    font-size: 16px;
+    color: rgb(44, 42, 42);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -66,6 +85,7 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  
   .alert {
   padding: 20px;
   background-color: #f44336;
@@ -106,7 +126,9 @@
         </button>
         <div class="dropdown-content">
           <a href="http://xavierhale.github.io/dlpage.html">Games</a>
-          <a href="#">Emulators (coming soon)</a>
+          <a href="http://xavierhale.github.io/ems.html">Emulators</a>
+          <a href="" onclick="myFunction()">ROM files (coming soon)</a>
+          <a href="http://xavierhale.github.io/tools.html">Tools & Trolls</a>
         </div>
       </div> 
       <a href="http://xavierhale.github.io/contact.html">Contact</a>
@@ -115,16 +137,29 @@
   </div>
 <div style="padding-left:16px">
   <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
-  <h1>Contact info:</h1>
-  <p>Email: ubggaming69@gmail.com</p>
-  <p></p>
-  <p></p>
+  <h1>Yo! Welcome to the dev page. </h1>
+  <p>Things here might not be the most interesting, but this is where I'll put all my </p>
+  <p>development projects/tools.</p>
+  <a href="http://https://github.com/XavierHale/Crimzen-Client">Crimzen</a>
+  <p>Idk if ill ever end up updating this but we'll figure it out</p>
+<script>
+  function myFunction() {
+    alert("Oh No! It looks like this isn't implemented");
+  }
+  </script>
 
-
-  </body>
-  <script>
-    function myFunction() {
-      alert("Oh No! It looks like this isn't implemented");
+<script>
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+      var div = this.parentElement;
+      div.style.opacity = "0";
+      setTimeout(function(){ div.style.display = "none"; }, 600);
     }
-    </script>
+  }
+  </script>
+
+</body>
 </html>
