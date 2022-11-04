@@ -117,6 +117,7 @@
         </div>
         
       </div>
+      <body onload="alert()">
   <div style="padding-left:10px">
   <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
   <h2>Game Downloads:</h2>
@@ -160,6 +161,29 @@
   <h5>One of the earliest Mechwarrior games, requires DOSBOX</h5>
 
 </div>
+<script>
+function doSomethingIfFound(url, status){
+  alert("The download server is online, all links should work")
+}
+function doSomethingIfNotFound(url, status){
+  alert("The download server is offline, you can still browse the library")
+}
+function test(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      doSomethingIfFound(url, xhttp.status);
+    } else if ( xhttp.readyState == 4 && xhttp.status != 200 ){
+      doSomethingIfNotFound(url, xhttp.status);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function alert() {
+  alert("If the links don't work, then the server is down. Just ask me to start it.")
+}
+</script>
 </body>
 </head>
 </html>
