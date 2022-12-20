@@ -109,7 +109,6 @@
             <div class="dropdown-content">
               <a href="http://xavierhale.github.io/dlpage.html">Games</a>
               <a href="http://xavierhale.github.io/ems.html">Emulators</a>
-              <a href="http://xavierhale.github.io/roms.html">ROM files (coming soon)</a>
               <a href="http://xavierhale.github.io/tools.html">Tools & Trolls</a>
             </div>
           </div> 
@@ -121,6 +120,12 @@
   <div style="padding-left:10px">
   <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
   <body onload="alert()"></body>
+  <div>
+    <input type="text" placeholder="Search:" id="search_text">
+    <input type="submit"  value="Search" id="search_submit"> 
+</div>
+</div>
+</div>
   <h2>Game Downloads:</h2>
   <h3></h3>
   <a href="https://download1497.mediafire.com/u4q0qk0lwiqg/rt8r8afc369ja7l/AshesStandalone_V1_00.zip">  Ashes Afterglow</a>
@@ -136,7 +141,7 @@
   <a href="https://download1338.mediafire.com/p2wzvk8hs9qg/rbl7s1pbqlaki3u/Karlson.zip">Karlson</a>
   <h5>  Parkour shooter, you have to get to the milk.</h5>
   <h5>  (aka dad simulator)</h5>
-  <a href="http://10.180.234.119:8000/games/mech4.zip">  Mechwarrior 4</a>
+  <a href="https://download1590.mediafire.com/dvyan29ibwlg/q9vw7v3bm7aggpe/mech4.zip">  Mechwarrior 4</a>
   <h5>  300 foot tall 100 ton BattleMechs shooting each other with giant lazers. What's not to like?</h5>
   <h5>  (note: does not curently work on school computers)</h5>
   <a href="https://download939.mediafire.com/dquhd7ayjgyg/eptk3c5ep1r8l3h/ThePlutoniaExpiriment.zip">  The Plutonia Expiriment</a>
@@ -192,6 +197,53 @@ function alert(message) {
   function servealert() {
     alert("The servers may be down, but you can still browse the games. If they are down, just ask me to start them")
   }
+</script>
+<script>
+  jQuery("#search_submit").on("click", function () {
+    //var search_str = jQuery("#search_text").val();console.log(search_str);
+    findString('');
+    return false;
+});
+
+var TRange=null;
+
+function findString (str) {
+    str = "stuff";
+    if (parseInt(navigator.appVersion)<4) return;
+    var strFound;
+    if (window.find) {
+
+        // CODE FOR BROWSERS THAT SUPPORT window.find
+
+        var original_content = window;
+        strFound=original_content.find(str);
+        if (!strFound) {
+            strFound=original_content.find(str,0,1);
+            while (original_content.find(str,0,1)) continue;
+        }
+    }
+    else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+        // EXPLORER-SPECIFIC CODE
+
+        if (TRange!=null) {
+            TRange.collapse(false);
+            strFound=TRange.findText(str);
+            if (strFound) TRange.select();
+        }
+        if (TRange==null || strFound==0) {
+            TRange=self.document.body.createTextRange();
+            strFound=TRange.findText(str);
+            if (strFound) TRange.select();
+        }
+    }
+    else if (navigator.appName=="Opera") {
+        alert ("Opera browsers not supported, sorry...")
+        return;
+    }
+    if (!strFound) alert ("String '"+str+"' not found!")
+    return;
+}
 </script>
 </body>
 </head>
