@@ -120,13 +120,10 @@
   <div style="padding-left:10px">
   <img src="logo.png" alt="ubg69420 tottaly legal free games by ya boi dead-x">
   <body onload="alert()"></body>
-  <div>
-    <input type="text" placeholder="Search:" id="search_text">
-    <input type="submit"  value="Search" id="search_submit"> 
-</div>
-</div>
 </div>
   <h2>Game Downloads:</h2>
+  <form id="sarchform" class="search2" method="get" action="source.html" />
+  <input class="search2" id="test" type="text" name="search" size="10" maxlength="255"/>
   <h3></h3>
   <a href="https://download1497.mediafire.com/u4q0qk0lwiqg/rt8r8afc369ja7l/AshesStandalone_V1_00.zip">  Ashes Afterglow</a>
   <p><h5>  A retro wasteland shooter, based on the DOOM engine</h5>
@@ -198,53 +195,12 @@ function alert(message) {
     alert("The servers may be down, but you can still browse the games. If they are down, just ask me to start them")
   }
 </script>
-<script>
-  jQuery("#search_submit").on("click", function () {
-    //var search_str = jQuery("#search_text").val();console.log(search_str);
-    findString('');
-    return false;
-});
-
-var TRange=null;
-
-function findString (str) {
-    str = "stuff";
-    if (parseInt(navigator.appVersion)<4) return;
-    var strFound;
-    if (window.find) {
-
-        // CODE FOR BROWSERS THAT SUPPORT window.find
-
-        var original_content = window;
-        strFound=original_content.find(str);
-        if (!strFound) {
-            strFound=original_content.find(str,0,1);
-            while (original_content.find(str,0,1)) continue;
-        }
-    }
-    else if (navigator.appName.indexOf("Microsoft")!=-1) {
-
-        // EXPLORER-SPECIFIC CODE
-
-        if (TRange!=null) {
-            TRange.collapse(false);
-            strFound=TRange.findText(str);
-            if (strFound) TRange.select();
-        }
-        if (TRange==null || strFound==0) {
-            TRange=self.document.body.createTextRange();
-            strFound=TRange.findText(str);
-            if (strFound) TRange.select();
-        }
-    }
-    else if (navigator.appName=="Opera") {
-        alert ("Opera browsers not supported, sorry...")
-        return;
-    }
-    if (!strFound) alert ("String '"+str+"' not found!")
-    return;
-}
-</script>
+<script type="text/javascript">
+  document.getElementById('searchform').onsubmit = function() {
+      window.location = 'http://www.google.com/search?q=site:xavierhale.github.io/dlpage.html ' + document.getElementById('test').value;
+      return false;
+  }
+  </script>
 </body>
 </head>
 </html>
